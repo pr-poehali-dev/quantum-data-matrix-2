@@ -138,6 +138,18 @@ export const Hero3DWebGL = () => {
         <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
       </div>
 
+      {/* Шапка учреждения — сверху по центру */}
+      <div
+        className="absolute z-[70] pointer-events-none w-full text-center"
+        style={{ top: "24px", padding: "0 24px" }}
+      >
+        <p className="text-white/70 text-xs md:text-sm font-space-mono leading-relaxed mx-auto max-w-2xl normal-case">
+          Муниципальное автономное общеобразовательное учреждение<br />
+          «Гимназия №4» городского округа город Стерлитамак<br />
+          Республика Башкортостан
+        </p>
+      </div>
+
       {/* Центрированный заголовок с отступом ~1.5 см = ~24px от краёв */}
       <div className="h-screen uppercase items-center w-full absolute z-[60] pointer-events-none flex justify-center flex-col"
         style={{ padding: "0 24px" }}
