@@ -32,7 +32,6 @@ const Scene = () => {
       uniform float uTime;
       varying vec2 vUv;
 
-      // Simple noise function
       float random(vec2 st) {
         return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
       }
@@ -51,15 +50,12 @@ const Scene = () => {
       void main() {
         vec2 uv = vUv;
 
-        // Depth-based displacement
         float depth = texture2D(uDepthMap, uv).r;
         vec2 displacement = depth * uPointer * 0.01;
         vec2 distortedUv = uv + displacement;
 
-        // Base texture
         vec4 baseColor = texture2D(uTexture, distortedUv);
 
-        // Create scanning effect
         float aspect = ${WIDTH}.0 / ${HEIGHT}.0;
         vec2 tUv = vec2(uv.x * aspect, uv.y);
         vec2 tiling = vec2(120.0);
@@ -69,13 +65,10 @@ const Scene = () => {
         float dist = length(tiledUv);
         float dot = smoothstep(0.5, 0.49, dist) * brightness;
 
-        // Flow effect based on progress
         float flow = 1.0 - smoothstep(0.0, 0.02, abs(depth - uProgress));
 
-        // Gold scanning overlay
         vec3 mask = vec3(dot * flow * 10.0, dot * flow * 8.0, 0.0);
 
-        // Combine effects
         vec3 final = baseColor.rgb + mask;
 
         gl_FragColor = vec4(final, 1.0);
@@ -145,33 +138,58 @@ export const Hero3DWebGL = () => {
         <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
       </div>
 
-      <div className="h-screen uppercase items-center w-full absolute z-[60] pointer-events-none px-10 flex justify-center flex-col">
-        <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
-          <div className="flex space-x-2 lg:space-x-6 overflow-hidden text-white">
-            {titleWords.map((word, index) => (
-              <div
-                key={index}
-                className={index < visibleWords ? "fade-in" : ""}
-                style={{
-                  animationDelay: `${index * 0.13 + (delays[index] || 0)}s`,
-                  opacity: index < visibleWords ? undefined : 0,
-                }}
-              >
-                {word}
-              </div>
-            ))}
+      {/* Центрированный заголовок с отступом ~1.5 см = ~24px от краёв */}
+      <div className="h-screen uppercase items-center w-full absolute z-[60] pointer-events-none flex justify-center flex-col"
+        style={{ padding: "0 24px" }}
+      >
+        <div className="text-center w-full">
+          <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
+            <div className="flex flex-wrap justify-center gap-2 lg:gap-6 overflow-hidden text-white">
+              {titleWords.map((word, index) => (
+                <div
+                  key={index}
+                  className={index < visibleWords ? "fade-in" : ""}
+                  style={{
+                    animationDelay: `${index * 0.13 + (delays[index] || 0)}s`,
+                    opacity: index < visibleWords ? undefined : 0,
+                  }}
+                >
+                  {word}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold max-w-4xl mx-auto px-4">
+            <div
+              className={subtitleVisible ? "fade-in-subtitle" : ""}
+              style={{
+                animationDelay: `${titleWords.length * 0.13 + 0.2 + subtitleDelay}s`,
+                opacity: subtitleVisible ? undefined : 0,
+              }}
+            >
+              {subtitle}
+            </div>
           </div>
         </div>
-        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold max-w-4xl mx-auto text-center px-4">
-          <div
-            className={subtitleVisible ? "fade-in-subtitle" : ""}
-            style={{
-              animationDelay: `${titleWords.length * 0.13 + 0.2 + subtitleDelay}s`,
-              opacity: subtitleVisible ? undefined : 0,
-            }}
-          >
-            {subtitle}
-          </div>
+      </div>
+
+      {/* Подпись автора — правый нижний угол */}
+      <div
+        className="absolute z-[70] pointer-events-none"
+        style={{ bottom: "24px", right: "24px", maxWidth: "360px" }}
+      >
+        <div className="text-right">
+          <p className="text-white/80 text-xs md:text-sm leading-relaxed font-space-mono">
+            Выполнила ученица 9А класса<br />
+            МАОУ «Гимназия №4»<br />
+            ГО г. Стерлитамак РБ<br />
+            <span className="text-yellow-400 font-semibold">Кизина Екатерина</span>
+          </p>
+          <p className="text-white/60 text-xs mt-2 leading-relaxed font-space-mono">
+            Научный наставник —<br />
+            учитель истории и обществознания<br />
+            <span className="text-yellow-300">Шакбасарова Гульназ Фаргатовна</span>
+          </p>
         </div>
       </div>
 
