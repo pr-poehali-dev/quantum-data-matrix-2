@@ -3,51 +3,51 @@ import { Badge } from "@/components/ui/badge"
 
 const features = [
   {
-    title: "Адаптивная нейрообработка",
-    description: "Самооптимизирующиеся алгоритмы, которые обучаются на нейронных паттернах и улучшают интерпретацию сигналов.",
-    icon: "brain",
-    badge: "ИИ",
+    title: "До 5 000 ₽ ежегодно",
+    description: "Государство зачисляет средства на карту каждый год. Деньги можно тратить на билеты в театры, музеи, кино и на концерты.",
+    icon: "money",
+    badge: "Бесплатно",
   },
   {
-    title: "Медицинская защита",
-    description: "Шифрование по стандартам FDA со сквозной защитой конфиденциальных нейронных данных.",
-    icon: "lock",
-    badge: "Сертификат",
+    title: "Карта системы «Мир»",
+    description: "Пушкинская карта работает на платформе национальной платёжной системы «Мир» и принимается во всех партнёрских учреждениях культуры.",
+    icon: "card",
+    badge: "Банк",
   },
   {
-    title: "Интуитивное управление",
-    description: "Естественная трансляция мыслей в действия с откликом менее миллисекунды и точностью 99,7%.",
-    icon: "globe",
-    badge: "Точность",
+    title: "Тысячи мероприятий",
+    description: "Более 40 000 культурных событий по всей России: спектакли, выставки, фильмы, концерты и экскурсии.",
+    icon: "ticket",
+    badge: "Афиша",
   },
   {
-    title: "Предиктивная калибровка",
-    description: "ML-модели, которые предугадывают намерения пользователя и оптимизируют нейронные пути.",
-    icon: "zap",
-    badge: "Умный",
+    title: "Приложение «Госуслуги Культура»",
+    description: "Удобное мобильное приложение для поиска мероприятий, покупки билетов и управления картой прямо со смартфона.",
+    icon: "phone",
+    badge: "Приложение",
   },
   {
-    title: "Биометрическая интеграция",
-    description: "Бесшовная синхронизация с мониторингом жизненных показателей для контроля здоровья.",
-    icon: "link",
-    badge: "Связь",
+    title: "Для молодёжи 14–22 лет",
+    description: "Программа создана специально для молодых людей от 14 до 22 лет — граждан Российской Федерации.",
+    icon: "people",
+    badge: "Молодёжь",
   },
   {
-    title: "Поддержка XR",
-    description: "Нативная совместимость с AR/VR-средами для терапевтических и рабочих приложений.",
-    icon: "target",
-    badge: "XR Ready",
+    title: "Совместный проект государства",
+    description: "Инициатива Минкультуры, Минцифры и Почта Банка для поддержки культурного просвещения молодого поколения.",
+    icon: "gov",
+    badge: "Государство",
   },
 ]
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 px-6 bg-background">
+    <section id="features" className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Возможности нового поколения</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Всё о Пушкинской карте</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Почувствуйте будущее с технологиями, которые переопределяют возможное
+            Государственная программа поддержки культуры для молодёжи России
           </p>
         </div>
 
@@ -61,12 +61,12 @@ export function FeaturesSection() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-3xl">
-                    {feature.icon === "brain" && "&#129504;"}
-                    {feature.icon === "lock" && "&#128274;"}
-                    {feature.icon === "globe" && "&#127760;"}
-                    {feature.icon === "zap" && "&#9889;"}
-                    {feature.icon === "link" && "&#128279;"}
-                    {feature.icon === "target" && "&#127919;"}
+                    {feature.icon === "money" && "💰"}
+                    {feature.icon === "card" && "💳"}
+                    {feature.icon === "ticket" && "🎭"}
+                    {feature.icon === "phone" && "📱"}
+                    {feature.icon === "people" && "🎓"}
+                    {feature.icon === "gov" && "🏛️"}
                   </span>
                   <Badge variant="secondary" className="bg-accent text-accent-foreground">
                     {feature.badge}

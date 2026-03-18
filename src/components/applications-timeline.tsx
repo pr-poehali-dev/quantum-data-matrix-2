@@ -3,75 +3,75 @@ import { Timeline } from "@/components/ui/timeline"
 export function ApplicationsTimeline() {
   const data = [
     {
-      title: "Медицинское восстановление",
+      title: "Шаг 1: Получите карту",
       content: (
         <div>
           <p className="text-white text-sm md:text-base font-normal mb-6 leading-relaxed">
-            Революционное лечение паралича, травм спинного мозга и нейродегенеративных заболеваний. Восстановление
-            моторных функций и независимости миллионам людей по всему миру.
+            Оформите Пушкинскую карту через портал Госуслуги или мобильное приложение «Госуслуги Культура».
+            Карта выдаётся бесплатно всем гражданам России в возрасте от 14 до 22 лет.
           </p>
           <div className="space-y-3">
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Восстановление при тетра- и параплегии
+            <div className="flex items-center gap-3 text-yellow-400 text-sm">
+              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+              Зарегистрируйтесь на Госуслугах
             </div>
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Контроль симптомов БАС и Паркинсона
+            <div className="flex items-center gap-3 text-yellow-400 text-sm">
+              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+              Подтвердите учётную запись
             </div>
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Ускорение реабилитации после инсульта
+            <div className="flex items-center gap-3 text-yellow-400 text-sm">
+              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+              Получите виртуальную карту мгновенно
             </div>
           </div>
         </div>
       ),
     },
     {
-      title: "Когнитивное усиление",
+      title: "Шаг 2: Выберите мероприятие",
       content: (
         <div>
           <p className="text-white text-sm md:text-base font-normal mb-6 leading-relaxed">
-            Усиление человеческого интеллекта, памяти и способности к обучению. Прямые нейроинтерфейсы для
-            улучшенной когнитивной производительности и обработки информации.
+            Откройте приложение «Госуслуги Культура» или сайт culture.ru и найдите интересные события рядом с вами.
+            Театры, музеи, кино, концерты и выставки — тысячи вариантов по всей стране.
           </p>
           <div className="space-y-3">
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Улучшение памяти и оптимизация запоминания
+            <div className="flex items-center gap-3 text-yellow-400 text-sm">
+              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+              Театры и спектакли
             </div>
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Ускоренное обучение и освоение навыков
+            <div className="flex items-center gap-3 text-yellow-400 text-sm">
+              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+              Музеи и выставки
             </div>
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Перевод языков в реальном времени
+            <div className="flex items-center gap-3 text-yellow-400 text-sm">
+              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+              Кино и концерты
             </div>
           </div>
         </div>
       ),
     },
     {
-      title: "Цифровая интеграция",
+      title: "Шаг 3: Купите билет",
       content: (
         <div>
           <p className="text-white text-sm md:text-base font-normal mb-6 leading-relaxed">
-            Бесшовное соединение человеческого сознания с цифровыми системами. Управление устройствами,
-            доступ к информации и общение силой мысли.
+            Оплатите билет Пушкинской картой онлайн или в кассе учреждения культуры.
+            Деньги списываются с баланса карты — собственные средства тратить не нужно.
           </p>
           <div className="space-y-3">
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Управление устройствами силой мысли
+            <div className="flex items-center gap-3 text-yellow-400 text-sm">
+              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+              Оплата онлайн или в кассе
             </div>
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Прямой доступ к интернету и облаку
+            <div className="flex items-center gap-3 text-yellow-400 text-sm">
+              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+              Баланс обновляется автоматически
             </div>
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Телепатические сети связи
+            <div className="flex items-center gap-3 text-yellow-400 text-sm">
+              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+              Неиспользованные средства сгорают 31 декабря
             </div>
           </div>
         </div>
@@ -83,10 +83,9 @@ export function ApplicationsTimeline() {
     <section id="applications" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10">
         <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-6">Трансформирующие применения</h2>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-6">Как пользоваться картой</h2>
           <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Технологии SynapseAI открывают беспрецедентные возможности для усиления человека, медицинского
-            лечения и цифровой интеграции в множестве областей.
+            Три простых шага — и культура доступна бесплатно. Всё оформляется онлайн за несколько минут.
           </p>
         </div>
 
